@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-public class Order<PRODUCT_TYPE extends Product<?>> {
+public class Order<PRODUCT_TYPE extends Product> {
     private int orderNumber;
     private String orderName;
     private Date orderDate;
@@ -17,38 +17,6 @@ public class Order<PRODUCT_TYPE extends Product<?>> {
         this.orderDate = orderDate;
         this.products = products;
         this.orderType = orderType;
-    }
-
-    public int getOrderNumber() {
-        return orderNumber;
-    }
-
-    public void setOrderNumber(int orderNumber) {
-        this.orderNumber = orderNumber;
-    }
-
-    public String getOrderName() {
-        return orderName;
-    }
-
-    public void setOrderName(String orderName) {
-        this.orderName = orderName;
-    }
-
-    public Date getOrderDate() {
-        return orderDate;
-    }
-
-    public void setOrderDate(Date orderDate) {
-        this.orderDate = orderDate;
-    }
-
-    public List<PRODUCT_TYPE> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<PRODUCT_TYPE> products) {
-        this.products = products;
     }
 
     @Override

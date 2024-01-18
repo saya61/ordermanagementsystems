@@ -13,10 +13,10 @@ public class ElectronicsStore {
         Customer customer2 = new Customer("홍길동");
 
         // 상품 정보 생성
-        Product<Product<Customer>> product1 = new Product<>(1, "SMARTPHONE", 1_700_000, "SAMSUNG");
-        Product<Product<Customer>> product2 = new Product<>(2, "TV", 5_000_000, "LG");
-        Product<Product<Customer>> product3 = new Product<>(3, "COMPUTER", 2_800_000, "Apple");
-        Product<Product<Customer>> product4 = new Product<>(4, "CAMERA", 800_000, "Sony");
+        Product<Customer> product1 = new Product<>(1, "SMARTPHONE", 1_700_000, "SAMSUNG");
+        Product<Customer> product2 = new Product<>(2, "TV", 5_000_000, "LG");
+        Product<Customer> product3 = new Product<>(3, "COMPUTER", 2_800_000, "Apple");
+        Product<Customer> product4 = new Product<>(4, "CAMERA", 800_000, "Sony");
 
         // 미리 고객에게 상품 추가
         customer1.getProductList().add(product1);
@@ -42,7 +42,7 @@ public class ElectronicsStore {
 
                     System.out.println("구매할 상품을 선택하세요 (1: P1, 2: P2, 3: P3, 4: P4):");
                     int productChoice = scanner.nextInt();
-                    Product<Product<Customer>> selectedProduct;
+                    Product<Customer> selectedProduct;
                     switch (productChoice) {
                         case 1:
                             selectedProduct = product1;

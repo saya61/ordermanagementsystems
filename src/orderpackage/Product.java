@@ -19,42 +19,6 @@ public class Product<CUSTOMER_UNIT> {
         this.customerList = new ArrayList<>();
     }
 
-    public int getProductNumber() {
-        return productNumber;
-    }
-
-    public void setProductNumber(int productNumber) {
-        this.productNumber = productNumber;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public int getProductPrice() {
-        return productPrice;
-    }
-
-    public void setProductPrice(int productPrice) {
-        this.productPrice = productPrice;
-    }
-
-    public String getProductManufacturer() {
-        return productManufacturer;
-    }
-
-    public void setProductManufacturer(String productManufacturer) {
-        this.productManufacturer = productManufacturer;
-    }
-
-    public List<CUSTOMER_UNIT> getCustomerList() {
-        return customerList;
-    }
-
     @Override
     public String toString() {
         return " 상품 번호 = " + productNumber +

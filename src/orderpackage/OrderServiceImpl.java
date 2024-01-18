@@ -6,8 +6,7 @@ import java.util.List;
 public class OrderServiceImpl implements OrderService {
 
     @Override
-    public Order createOrder(Customer customer, List<Product<Product<Customer>>> productList) {
-        // Implement your order creation logic here
+    public Order createOrder(Customer customer, List<Product<Customer>> productList) {
         int orderNumber = generateOrderNumber();
         String orderName = "신규 주문";
         Date orderDate = new Date();
@@ -18,15 +17,12 @@ public class OrderServiceImpl implements OrderService {
         return order;
     }
 
-
     @Override
     public void cancelOrder(Order order) {
-        // Implement order cancellation logic here
         System.out.println("주문이 취소되었습니다: " + order);
     }
 
     private int generateOrderNumber() {
-        // Implement order number generation logic
         return (int) (Math.random() * 1000) + 1;
     }
 }

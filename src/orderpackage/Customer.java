@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Customer {
     private String customerName;
-    private List<Product<Product<Customer>>> productList;
+    private List<Product<Customer>> productList;
 
     public Customer(String customerName) {
         this.customerName = customerName;
@@ -20,7 +20,7 @@ public class Customer {
         this.customerName = customerName;
     }
 
-    public List<Product<Product<Customer>>> getProductList() {
+    public List<Product<Customer>> getProductList() {
         return productList;
     }
 }
