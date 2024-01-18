@@ -2,8 +2,6 @@ package orderpackage2;
 
 import java.util.Scanner;
 
-import static orderpackage2.Drink.drinkMenu;
-
 public class OrderManagementCafe {
     public static void main(String[] args) {
         Customer testCustomer = new Customer("아무개", "XX", 30);
@@ -16,8 +14,8 @@ public class OrderManagementCafe {
         if(customerChoiceOrder == 1) {
             System.out.print("주문받겠습니다. 음료 이름을 입력하세요: ");
             String customerChoiceDrink = scanner.nextLine().trim();
-            if(drinkMenu.containsKey(customerChoiceDrink)) {
-                Drink selectedDrink = drinkMenu.get(customerChoiceDrink);
+            if(Drink.drinkMenu.containsKey(customerChoiceDrink)) {
+                Drink selectedDrink = Drink.drinkMenu.get(customerChoiceDrink);
                 Order order = new Order(selectedDrink, testCustomer);
                 order.registerOrder();
                 order.processOrder();
