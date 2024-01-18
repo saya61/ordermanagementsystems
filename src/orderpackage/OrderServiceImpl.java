@@ -5,6 +5,7 @@ import java.util.List;
 
 public class OrderServiceImpl implements OrderService {
 
+    // Order 오버라이드 하여 createOrder 메서드 생성
     @Override
     public Order createOrder(Customer customer, List<Product<Customer>> productList) {
         int orderNumber = generateOrderNumber();
@@ -13,7 +14,6 @@ public class OrderServiceImpl implements OrderService {
         String orderType = "Online";
         Order order = new Order(orderNumber, orderName, orderDate, productList, orderType);
         System.out.println("주문 조회 완료");
-
         return order;
     }
 

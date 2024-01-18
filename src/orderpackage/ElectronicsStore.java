@@ -2,9 +2,11 @@ package orderpackage;
 
 import java.util.Scanner;
 
+// 메인 메서드
 public class ElectronicsStore {
 
     public static void main(String[] args) {
+        // 객체 생성
         OrderService orderService = new OrderServiceImpl();
         CustomerService customerService = new CustomerService();
 
@@ -23,6 +25,7 @@ public class ElectronicsStore {
         customer2.getProductList().add(product2);
         customer2.getProductList().add(product3);
 
+        // 메뉴 조작을 위한 입력 데이터 저장
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -42,6 +45,7 @@ public class ElectronicsStore {
 
                     System.out.println("구매할 상품을 선택하세요 (1: P1, 2: P2, 3: P3, 4: P4):");
                     int productChoice = scanner.nextInt();
+
                     Product<Customer> selectedProduct;
                     switch (productChoice) {
                         case 1:
