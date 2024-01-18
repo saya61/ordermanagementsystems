@@ -51,7 +51,4 @@ public class Drink {
     public String getDrinkName() {
         return drinkName;
     }
-    public void setDrinkName(String drinkName) {
-        this.drinkName = drinkName;
-    }
 }

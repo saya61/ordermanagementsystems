@@ -37,7 +37,7 @@ public class Order {
                 } else {
                     count++;
                     System.out.println(count);
-                    Cafe.makeDrink();
+                    customer.order();
                 }
             } while(!randomIsOk);
         } else if (!registered) {
@@ -50,7 +50,7 @@ public class Order {
     public void deliverDrink() {
         if (processed && !delivered) {
             delivered = true;
-            System.out.println("주문이 배달되었습니다.");
+            System.out.println("음료가 고객에게 배달되었습니다.");
             System.out.print("고객 정보: " + customer);
             System.out.println(" 주문 정보: " + orderedDrink);
         } else if (!processed) {
