@@ -16,10 +16,6 @@ public class Customer {
         return customerName;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
-
     public List<Product<Customer>> getProductList() {
         return productList;
     }
