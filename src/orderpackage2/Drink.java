@@ -12,30 +12,37 @@ public class Drink {
     private String drinkName;   // 음료수 이름
     private int drinkCapacity;  // 음료수 용량(ML)
     private int drinkPrice; // 음료수 가격(원)
-    private boolean drinkHot; // 음료수가 뜨거운지(true) 차가운지(false)
-    public Drink(String drinkName, int drinkCapacity, int drinkPrice, boolean drinkHot) {
+    private String drinkHot; // 뜨거운지(true) 차가운지(false)
+    private String coffeeDrinkHot;  // 커피 주문시 뜨거운지 차가운지 택
+    public Drink(String drinkName, int drinkCapacity, int drinkPrice) {
         this.drinkName = drinkName;
         this.drinkCapacity = drinkCapacity;
         this.drinkPrice = drinkPrice;
-        this.drinkHot = drinkHot;
+        this.drinkHot = "차가움";
     }
 
-    public boolean isHot() {
-        return drinkHot;
+    public Drink(String drinkName, int drinkCapacity, int drinkPrice, String coffeeDrinkHot) {
+        this.drinkName = drinkName;
+        this.drinkCapacity = drinkCapacity;
+        this.drinkPrice = drinkPrice;
+//        this.coffeeDrinkHot = coffeeDrinkHot;
+        setCoffeeDrinkHot(coffeeDrinkHot);
     }
 
-    public boolean isCold() {
-        return !drinkHot;
-    }
+    public static final Map<String, Drink> coffeeDrinkMenu = new HashMap<>();
+    public static final Map<String, Drink> sodaDrinkMenu = new HashMap<>();
+    public static final Map<String, Drink> adeDrinkMenu = new HashMap<>();
 
-    public static final Map<String, Drink> drinkMenu = new HashMap<>();
+
     static {
-        drinkMenu.put("코카콜라", new Drink("코카 콜라", 500, 2200, false));
-        drinkMenu.put("사이다", new Drink("사이다", 500, 2000, false));
-        drinkMenu.put("펩시콜라", new Drink("펩시 콜라", 500, 1800, false));
-        drinkMenu.put("닥터페퍼", new Drink("닥터 페퍼", 450, 2000, false));
-        drinkMenu.put("아메리카노", new Drink("따뜻한 아메리카노", 280, 3300, true));
-        drinkMenu.put("에스프레소", new Drink("따뜻한 에스프레소", 60,2800, true));
+        sodaDrinkMenu.put("코카콜라", new Drink("코카 콜라", 500, 2200));
+        sodaDrinkMenu.put("사이다", new Drink("사이다", 500, 2000));
+        sodaDrinkMenu.put("펩시콜라", new Drink("펩시 콜라", 500, 1800));
+        sodaDrinkMenu.put("닥터페퍼", new Drink("닥터 페퍼", 450, 2000));
+        coffeeDrinkMenu.put("아메리카노", new Drink("아메리카노", 280, 3300, ""));
+        coffeeDrinkMenu.put("에스프레소", new Drink("에스프레소", 60,2800, ""));
+        adeDrinkMenu.put("레모네이드", new Drink("레모네이드", 330, 2200));
+        adeDrinkMenu.put("파워에이드", new Drink("파워에이드", 480, 3200));
     }
 
     @Override
@@ -44,11 +51,22 @@ public class Drink {
                 "음료명='" + drinkName + '\'' +
                 ", 용량(mL)=" + drinkCapacity +
                 ", 가격(원)=" + drinkPrice +
-                ", 뜨거운가?=" + drinkHot +
+                ", 음료온도=" + drinkHot +
                 '}';
     }
+
 
     public String getDrinkName() {
         return drinkName;
     }
+
+    public String getCoffeeDrinkHot(String coffeeDrinkHot) {
+        return coffeeDrinkHot;
+    }
+
+    public void setCoffeeDrinkHot(String coffeeDrinkHot) {
+        this.coffeeDrinkHot = coffeeDrinkHot;
+    }
+    //Drink 에서 탄산 / 커피 / 에이드에 따라 클래스 구체화(자식클래스 생성)
+    //Drink 의 자식 클래스가 된 커피의 핫 또는 쿨 인터페이스화?추상화?자식클래스?
 }

@@ -32,4 +32,7 @@ public class Customer {
                 ", 나이=" + customerAge +
                 '}';
     }
+    //Customer 개체 여러개 생성
+    //Customer 의 결제 방법 추가
+    //- 카드는 기본, 현금 결제시 10% 할인 등
 }
